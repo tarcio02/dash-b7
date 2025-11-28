@@ -1,4 +1,3 @@
-import { Building2, Plus, Trash2, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -7,6 +6,8 @@ import { toast } from "sonner";
 import { useLocation } from "react-router-dom";
 import { DashboardSidebar } from "./DashboardSidebar";
 import { DashboardTopbar } from "./DashboardTopbar";
+import { StatsCard } from "./StatsCard";
+import { Building2, Megaphone, DollarSign, Phone, Calendar, Plus, Trash2, TrendingUp, Ban, CheckCircle } from "lucide-react";
 
 interface Company {
   id: string;
@@ -62,7 +63,7 @@ export const ClientDetails = () => {
   };
 
   return (
-    <div className="dark flex h-screen bg-card">
+    <div className="dark flex h-screen bg-background">
       {/* Sidebar fixa à esquerda */}
       <div className="w-64 border-r border-border">
         <DashboardSidebar />
@@ -82,6 +83,33 @@ export const ClientDetails = () => {
               <h2 className="text-2xl font-bold text-foreground">{client.name}</h2>
               <p className="text-sm text-muted-foreground mt-1">{client.email}</p>
             </div>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+            <StatsCard
+              title="Tarefas Concluídas"
+              value={14}
+              icon={CheckCircle }
+              description="20 tarefas totais"
+            />
+            <StatsCard
+              title="Campanhas ativas"
+              value={6}
+              icon={Megaphone }
+              description={`14 Campanhas Totais`}
+            />
+            <StatsCard
+              title="Investimento Total em campnhas"
+              value={1.500}
+              icon={Ban} 
+              description="Limite 2.000,00"
+            />
+            <StatsCard
+              title="ROI Médio"
+              value={`147%`}
+              icon={TrendingUp}
+              description="Média Indivídual"
+            />
           </div>
 
           <div className="flex items-center justify-between mb-4">

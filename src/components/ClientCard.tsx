@@ -64,8 +64,9 @@ export const ClientCard = ({ client, onSelectClient, isSelected }: ClientCardPro
           navigate("/client-details", { state: { client } })
         }}
       >
-        <MessageSquare className="w-4 h-4 mr-2" />
-        Abrir Chat
+        <Building2 className="w-4 h-4 mr-2"/>
+        {/* <MessageSquare  /> */}
+        Ver Empresas
       </Button>
     </Card>
   );

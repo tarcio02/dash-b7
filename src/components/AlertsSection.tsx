@@ -8,7 +8,7 @@ const tasks = [
     id: 1,
     status: "pending",
     icon: Clock,
-    client: "Tech Solutions",
+    client: "Donna M",
     task: "Criar 3 posts para Instagram",
     reposavel: "Júlio",
     deadline: "Hoje, 18:00",
@@ -17,7 +17,7 @@ const tasks = [
     id: 2,
     status: "pending",
     icon: Clock,
-    client: "Marketing Plus",
+    client: "MD+",
     task: "Relatório mensal de performance",
     reposavel: "Bruna",
     deadline: "Amanhã",
@@ -26,7 +26,7 @@ const tasks = [
     id: 3,
     status: "completed",
     icon: CheckCircle,
-    client: "E-commerce Brasil",
+    client: "Rizodent",
     task: "Criar campanha de conversão",
     reposavel: "João",
     deadline: "Concluída hoje",
@@ -35,7 +35,7 @@ const tasks = [
     id: 4,
     status: "pending",
     icon: Clock,
-    client: "Startup XYZ",
+    client: "Águas Mucugê",
     task: "Editar Vídeos de cliente",
     reposavel: "Kaique",
     deadline: "Em 2 dias",
@@ -44,7 +44,7 @@ const tasks = [
     id: 5,
     status: "completed",
     icon: CheckCircle,
-    client: "Loja Virtual 123",
+    client: "Ferragens Conquista",
     task: "Reunião de fechamento",
     reposavel: "Vitor",
     deadline: "Concluída ontem",
@@ -68,7 +68,7 @@ export function AlertsSection() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Tarefas de Clientes</CardTitle>
+        <CardTitle>Útimas Tarefas</CardTitle>
       </CardHeader>
       <CardContent>
         <div className="space-y-3">

@@ -10,6 +10,12 @@ import EmployeeProfile from "./pages/EmployeeProfile";
 import Dashboard from "./pages/Dashboard";
 import Clientes  from "./pages/Clientes";
 import { ClientDetails } from "./components/ClientDetails";
+import Empresas from "./pages/Empresas";
+import CompanyTasks from "./pages/CompanyTasks";
+import Campanhas from "./pages/Campanhas";
+import BMDetails from "./pages/BMDetails";
+import LayoutCliente from "./pages/LayoutCliente";
+import LayoutColaborador from "./pages/LayoutColaborador";
 
 const queryClient = new QueryClient();
 
@@ -28,6 +34,12 @@ const App = () => (
           <Route path="employee/:id" element={<EmployeeProfile />}/>
           <Route path="clientes" element={<Clientes/>}/>
           <Route path="/client-details" element={<ClientDetails />} />
+          <Route path="/empresas" element={<Empresas />} />
+          <Route path="/empresas/:companyId/tasks" element={<CompanyTasks />} />
+          <Route path="/campanhas" element={<Campanhas />} />
+          <Route path="/campanhas/:id" element={<BMDetails />} />
+          <Route path="/panel-cliente" element={<LayoutCliente />} />
+          <Route path="/panel-colaborador" element={<LayoutColaborador />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>

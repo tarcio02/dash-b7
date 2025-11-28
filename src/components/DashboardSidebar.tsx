@@ -9,8 +9,8 @@ const navigation = [
   { name: "Clientes", href: "/clientes", icon: FaHandshake },
   { name: "Empresas", href: "/empresas", icon: Building2 },
   { name: "Campanhas ADS", href: "/campanhas", icon: Megaphone },
-  { name: "Tarefas", href: "/financeiro", icon: ClipboardList   },
-  { name: "Configurações", href: "/configuracoes", icon: Settings },
+  // { name: "Tarefas", href: "/financeiro", icon: ClipboardList   },
+  // { name: "Configurações", href: "/configuracoes", icon: Settings },
 ];
 
 import logo from "../assets/Logo.png"

@@ -21,17 +21,17 @@ import {
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 const mockClients = [
-  { id: 1, name: "João Silva", company: "Tech Solutions", status: "active", campaign: "SEO Premium", plan: "B7-3x" },
-  { id: 2, name: "Maria Santos", company: "Creative Studio", status: "active", campaign: "Social Media", plan: "Start" },
-  { id: 3, name: "Pedro Costa", company: "Mega Corp", status: "warning", campaign: "Ads Google", plan: "Start" },
-  { id: 4, name: "Ana Lima", company: "Start Inc", status: "active", campaign: "Email Marketing", plan: "B7-3x" },
-  { id: 5, name: "Carlos Souza", company: "Innovate Labs", status: "danger", campaign: "Brand Strategy", plan: "Start" },
+  { id: 1, name: "João Silva", company: "4", status: "active", campaign: "SEO Premium", plan: "B7-3x" },
+  { id: 2, name: "Maria Santos", company: "3", status: "active", campaign: "Social Media", plan: "Start" },
+  { id: 3, name: "Pedro Costa", company: "5", status: "warning", campaign: "Ads Google", plan: "Start" },
+  { id: 4, name: "Ana Lima", company: "2", status: "active", campaign: "Email Marketing", plan: "B7-3x" },
+  { id: 5, name: "Carlos Souza", company: "1", status: "danger", campaign: "Brand Strategy", plan: "Start" },
 ];
 
 const statusConfig = {
   active: { label: "Ok", variant: "ok" as const, color: "bg-[hsl(var(--success))]" },
-  warning: { label: "Atenção", variant: "pendente" as const, color: "bg-[hsl(var(--warning))]" },
-  danger: { label: "Alerta", variant: "destructive" as const, color: "bg-[hsl(var(--danger))]" },
+  warning: { label: "Pendência", variant: "pendente" as const, color: "bg-[hsl(var(--warning))]" },
+  danger: { label: "Em Atraso", variant: "destructive" as const, color: "bg-[hsl(var(--danger))]" },
 };
 
 export function ClientsTable() {
@@ -49,7 +49,7 @@ export function ClientsTable() {
     <Card>
       <CardHeader>
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-          <CardTitle>Clientes e Empresas</CardTitle>
+          <CardTitle>Clientes</CardTitle>
           <div className="flex flex-col gap-2 sm:flex-row sm:items-center">
             <div className="relative flex-1 sm:w-64">
               <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
@@ -80,9 +80,9 @@ export function ClientsTable() {
             <TableHeader>
               <TableRow>
                 <TableHead>Cliente</TableHead>
-                <TableHead>Empresa</TableHead>
+                <TableHead>Empresas</TableHead>
                 <TableHead>Status</TableHead>
-                <TableHead>Última Campanha</TableHead>
+                {/* <TableHead>Última Campanha</TableHead> */}
                 <TableHead>Plano</TableHead>
                 <TableHead className="text-right">Ações</TableHead>
               </TableRow>
@@ -98,7 +98,7 @@ export function ClientsTable() {
                       {statusConfig[client.status].label}
                     </Badge>
                   </TableCell>
-                  <TableCell className="text-muted-foreground">{client.campaign}</TableCell>
+                  {/* <TableCell className="text-muted-foreground">{client.campaign}</TableCell> */}
                   <TableCell>
                     <Badge variant="primary">{client.plan}</Badge>
                   </TableCell>

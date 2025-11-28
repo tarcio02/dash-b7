@@ -26,7 +26,7 @@ const mockCampaigns = [
     name: "Black Friday 2024", 
     objectives: "Conversão", 
     reach: "45.2K", 
-    clicks: "3.8K", 
+    clicks: "João e Maria", 
     invested: "R$ 1.500,00",
     status: "active"
   },
@@ -35,7 +35,7 @@ const mockCampaigns = [
     name: "Lançamento Produto X", 
     objectives: "Awareness", 
     reach: "128.5K", 
-    clicks: "12.3K", 
+    clicks: "MD+", 
     invested: "R$ 12.500,00",
     status: "active"
   },
@@ -44,7 +44,7 @@ const mockCampaigns = [
     name: "Retargeting Q4", 
     objectives: "Conversão", 
     reach: "22.1K", 
-    clicks: "1.9K", 
+    clicks: "Ferragens Conquista", 
     invested: "R$ 8.200,00",
     status: "warning"
   },
@@ -52,8 +52,8 @@ const mockCampaigns = [
     id: 4, 
     name: "Email Marketing - Natal", 
     objectives: "Engajamento", 
-    reach: "67.8K", 
-    clicks: "5.4K", 
+    reach: "22.1K", 
+    clicks: "Mercato Sadia", 
     invested: "R$ 3.500,00",
     status: "active"
   },
@@ -62,7 +62,7 @@ const mockCampaigns = [
     name: "Google Ads - Brand", 
     objectives: "Tráfego", 
     reach: "95.3K", 
-    clicks: "8.2K", 
+    clicks: "Dona M", 
     invested: "R$ 5.900,00",
     status: "danger"
   },
@@ -121,9 +121,9 @@ export function CampaignsTable() {
             <TableHeader>
               <TableRow>
                 <TableHead>Nome</TableHead>
+                <TableHead>Conta</TableHead>
                 <TableHead>Objetivos</TableHead>
                 <TableHead>Alcance</TableHead>
-                <TableHead>Cliques</TableHead>
                 <TableHead>Valor Investido</TableHead>
                 <TableHead className="text-right">Ações</TableHead>
               </TableRow>
@@ -140,11 +140,11 @@ export function CampaignsTable() {
                       </Badge> */}
                     </div>
                   </TableCell>
+                    <TableCell className="text-muted-foreground">{campaign.clicks}</TableCell>
                   <TableCell>
                     <Badge variant="primary">{campaign.objectives}</Badge>
                   </TableCell>
                   <TableCell className="text-muted-foreground">{campaign.reach}</TableCell>
-                  <TableCell className="text-muted-foreground">{campaign.clicks}</TableCell>
                   <TableCell className="font-medium">{campaign.invested}</TableCell>
                   <TableCell>
                     <div className="flex justify-end gap-2">

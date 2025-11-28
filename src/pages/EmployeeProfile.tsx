@@ -1,5 +1,5 @@
 import { useParams, useNavigate } from "react-router-dom";
-import { ArrowLeft, Mail, Phone, Calendar, Plus, Edit, Trash2 } from "lucide-react";
+import { ArrowLeft, Mail, Phone, Calendar, Plus, Edit, Trash2, ListTodo, TrendingUp, PenLine, Ban, CheckCircle } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -9,6 +9,7 @@ import { mockEmployees } from "@/data/mockData";
 import { Progress } from "@/components/ui/progress";
 import { DashboardSidebar } from "@/components/DashboardSidebar";
 import { DashboardTopbar } from "@/components/DashboardTopbar";
+import { StatsCard } from "@/components/StatsCard";
 
 const statusConfig = {
   active: { label: "Ativo", color: "bg-success text-success-foreground" },
@@ -57,9 +58,9 @@ const EmployeeProfile = () => {
         <header className="border-b border-border/50 bg-card/50 backdrop-blur-sm">
           <div className="container mx-auto px-6 py-4">
             <Button
-              variant="ghost"
+              variant="outline"
               onClick={() => navigate("/")}
-              className="mb-4"
+              className="mb-4 text-white"
             >
               <ArrowLeft className="w-4 h-4 mr-2" />
               Voltar ao Dashboard
@@ -172,8 +173,54 @@ const EmployeeProfile = () => {
               </div>
             </TabsContent>
 
-            {/* TAREFAS */}
+            {/* TAREFAS DESIGNADAS*/}
             <TabsContent value="tasks" className="space-y-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+                <StatsCard
+                  title="Tarefas em Andamento"
+                  value={3}
+                  icon={PenLine}
+                  description="14 tarefas concluídas"
+                />
+                <StatsCard
+                  title="Tarefas Concluídas"
+                  value={14}
+                  icon={CheckCircle }
+                  description={`20 tarefas totais`}
+                />
+                <StatsCard
+                  title="Tarefas Não Concluídas"
+                  value={completedTasks}
+                  icon={Ban} 
+                  description="Esta semana"
+                />
+                <StatsCard
+                  title="Produtividade Média"
+                  value={`97%`}
+                  icon={TrendingUp}
+                  description="Média Indivídual"
+                />
+              </div>
+
+              <Card>
+                <CardHeader>
+                  <CardTitle className="flex items-center justify-between">
+                    <span>Progresso Semanal</span>
+                    <span className="text-sm text-muted-foreground">
+                      14 de 20 concluídas
+                    </span>
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="w-full bg-muted rounded-full h-3">
+                    <div
+                      className="bg-gradient-primary h-3 rounded-full transition-all duration-300"
+                      style={{ width: `70%` }}
+                    />
+                  </div>
+                </CardContent>
+              </Card>
+
               <div className="flex justify-between items-center">
                 <div>
                   <h3 className="text-lg font-semibold text-foreground">
@@ -187,7 +234,7 @@ const EmployeeProfile = () => {
                   <Plus className="w-4 h-4 mr-2" />
                   Adicionar Tarefa
                 </Button>
-              </div>
+              </div>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
 
               <div className="grid gap-4">
                 {employee.tasks.map((task) => {
