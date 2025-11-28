@@ -1,4 +1,4 @@
-import { LayoutDashboard, Users, Building2, Megaphone, DollarSign, Settings, ClipboardList   } from "lucide-react";
+import { LayoutDashboard, Users, Building2, Megaphone, DollarSign, Settings, ClipboardList, User   } from "lucide-react";
 import { NavLink } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { FaHandshake } from "react-icons/fa";
@@ -9,8 +9,8 @@ const navigation = [
   { name: "Clientes", href: "/clientes", icon: FaHandshake },
   { name: "Empresas", href: "/empresas", icon: Building2 },
   { name: "Campanhas ADS", href: "/campanhas", icon: Megaphone },
-  // { name: "Tarefas", href: "/financeiro", icon: ClipboardList   },
-  // { name: "Configurações", href: "/configuracoes", icon: Settings },
+  { name: "Painel Cliente", href: "/panel-cliente", icon: User   },
+  { name: "Painel Coloborador", href: "/panel-colaborador", icon: User },
 ];
 
 import logo from "../assets/Logo.png"
